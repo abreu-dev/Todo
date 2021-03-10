@@ -1,0 +1,17 @@
+<div class="todo-board-columns" cdkDropListGroup>
+    <div class="todo-board-column" *ngFor="let column of board.columns; let i = index">
+        <app-column-canvas
+            [column]="column"
+            [isLastColumn]="column.positionInBoard === board.columns.length"
+            (addCardToBoard)="onAddCardSubmited($event)"
+            (updateCardPriorityInColumn)="onUpdateCardPriorityInColumn($event)"
+            (moveCardBetweenColumns)="onMoveCardBetweenColumns($event)"
+            (updateColumnTitle)="onUpdateColumnTitle($event)"
+            (updateColumnPositionInBoard)="onUpdateColumnPositionInBoard($event)"
+            [id]="'column-' + i"
+        ></app-column-canvas>
+    </div>
+    <div class="todo-board-column" id="add-column">
+        <app-add-column-tile [displayTitle]="addColumnTileDisplayTitle" (submitData)="onAddColumnSubmited($event)"></app-add-column-tile>
+    </div>
+</div>

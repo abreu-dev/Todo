@@ -1,0 +1,26 @@
+<div class="todo-container">
+    <h2 id="page-title">Quadros</h2>
+
+    <div fxLayout.xs="column" fxLayout="row wrap" fxLayoutGap="1%">
+        <div
+            fxFlex.sm="0 1 calc(50%-10px)"
+            fxFlex.md="0 1 calc(33%-10px)"
+            fxFlex.gt-md="0 1 calc(18%-10px)"
+            (click)="openAddBoardDialog()"
+            id="add-board"
+        >
+            <app-add-board-tile [title]="'Criar novo quadro'"></app-add-board-tile>
+        </div>
+
+        <div
+            fxFlex.sm="0 1 calc(50%-10px)"
+            fxFlex.md="0 1 calc(33%-10px)"
+            fxFlex.gt-md="0 1 calc(18%-10px)"
+            *ngFor="let board of boards; let i = index"
+            [routerLink]="['/board', board.id]"
+            [id]="'board-' + i"
+        >
+            <app-board-tile [board]="board"></app-board-tile>
+        </div>
+    </div>
+</div>

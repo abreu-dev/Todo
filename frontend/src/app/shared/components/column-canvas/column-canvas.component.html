@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-title>
+        <app-editable appEditableOnEnter (update)="onUpdateColumnTitle()">
+            <ng-template appViewMode>
+                <div class="todo-board-column-title-view-mode">
+                    <h2 fxFlex="90%" id="column-title">{{ column.title }}</h2>
+                    <app-column-menu-actions
+                        (updateColumnPositionInBoard)="onUpdateColumnPositionInBoard($event)"
+                        [canMoveToLeft]="column.positionInBoard === 1"
+                        [canMoveToRight]="isLastColumn"
+                        id="open-column-menu-action"
+                    ></app-column-menu-actions>
+                </div>
+            </ng-template>
+            <ng-template appEditMode>
+                <div class="todo-board-column-title-edit-mode">
+                    <input type="text" [formControl]="columnTitleFormControl" autofocus onselect="this.select()" id="update-column-title" />
+                </div>
+            </ng-template>
+        </app-editable>
+    </mat-card-title>
+    <mat-card-content>
+        <div class="todo-board-cards">
+            <div
+                class="todo-board-cards-wrapper"
+                cdkDropList
+                [cdkDropListData]="column.cards"
+                (cdkDropListDropped)="moveCard($event, column.id)"
+                id="dropzone"
+            >
+                <div class="todo-board-card" *ngFor="let card of column.cards; let i = index" cdkDrag>
+                    <mat-card [id]="'card-' + i">
+                        <mat-card-title>
+                            <span> {{ card.title }}</span>
+                        </mat-card-title>
+                    </mat-card>
+                </div>
+            </div>
+
+            <div class="todo-board-card" id="add-card">
+                <app-add-card-tile [displayTitle]="addCardTileDisplayTitle" (submitData)="onAddCardSubmited($event)"></app-add-card-tile>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

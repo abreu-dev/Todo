@@ -1,0 +1,24 @@
+<div class="forgot-username-form">
+    <div class="forgot-username-form-header">
+        <mat-icon [inline]="true">task_alt</mat-icon>
+        <h1>Esqueceu o nome de usuário?</h1>
+    </div>
+
+    <hr />
+
+    <div class="forgot-username-form-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" />
+            </mat-form-field>
+
+            <hr />
+            <div class="forgot-username-form-actions">
+                <button mat-raised-button color="success" type="submit">Enviar email</button>
+                &nbsp;&nbsp;
+                <button mat-raised-button color="primary" type="button" [routerLink]="['/account/login']">Lembrou?</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="register-form">
+    <div class="register-form-header">
+        <mat-icon [inline]="true">task_alt</mat-icon>
+        <h1>Crie sua conta Todo</h1>
+    </div>
+
+    <hr />
+
+    <div class="register-form-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Nome de usuário</mat-label>
+                <input matInput formControlName="username" id="username" />
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" id="email" />
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" id="password" />
+                <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+                    <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <hr />
+            <div class="register-form-actions">
+                <button mat-raised-button color="success" type="submit" id="register">Criar conta</button>
+                &nbsp;&nbsp;
+                <button mat-raised-button color="primary" type="button" [routerLink]="['/account/login']">Possui uma conta?</button>
+            </div>
+        </form>
+    </div>
+</div>

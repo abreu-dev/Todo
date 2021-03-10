@@ -1,0 +1,40 @@
+.login-form {
+    margin: 0px auto;
+    margin-top: 40px;
+    width: 340px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.login-form-header {
+    text-align: center;
+}
+
+.login-form-header mat-icon {
+    padding: 30px;
+    font-size: 48px;
+}
+
+.login-form-body .form-field {
+    width: 100%;
+}
+
+.login-form-forgot-password {
+    text-align: left;
+}
+
+.login-form-forgot-password a,
+p {
+    color: #76777a;
+    text-decoration: none;
+}
+
+.login-form-actions {
+    text-align: center;
+}
+
+.login-form-actions button {
+    min-width: 160px;
+}

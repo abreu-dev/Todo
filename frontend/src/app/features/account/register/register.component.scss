@@ -1,0 +1,30 @@
+.register-form {
+    margin: 0px auto;
+    margin-top: 40px;
+    width: 340px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.register-form-header {
+    text-align: center;
+}
+
+.register-form-header mat-icon {
+    padding: 30px;
+    font-size: 48px;
+}
+
+.register-form-body .form-field {
+    width: 100%;
+}
+
+.register-form-actions {
+    text-align: center;
+}
+
+.register-form-actions button {
+    min-width: 160px;
+}

@@ -1,0 +1,51 @@
+@import 'assets/scss/_variables';
+
+.todo-board-wrapper {
+    width: 100%;
+}
+
+.todo-board-wrapper .todo-board-title-wrapper {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.todo-board-wrapper .todo-board-title-wrapper .todo-board-title-view-mode {
+    background-color: $todo-button-secondary-color;
+    color: $todo-primary-text-color;
+    border-radius: 3px;
+    border: 0;
+    align-items: center;
+    width: auto;
+    padding: 0;
+}
+
+.todo-board-wrapper .todo-board-title-wrapper .todo-board-title-view-mode:hover {
+    background-color: $todo-button-secondary-color-hover;
+}
+
+.todo-board-wrapper .todo-board-title-wrapper .todo-board-title-view-mode span {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+.todo-board-wrapper .todo-board-title-wrapper .todo-board-title-edit-mode {
+    border-radius: 3px;
+    border: 0;
+    align-items: center;
+    width: auto;
+    padding: 0;
+}
+
+.todo-board-wrapper .todo-board-title-wrapper .todo-board-title-edit-mode span {
+    font-size: 18px;
+    height: 32px;
+}
+
+.todo-board-wrapper .todo-board-title-wrapper .todo-board-title-edit-mode span input {
+    border-radius: 3px;
+    border: 0;
+    font-size: 18px;
+    padding: 0 10px;
+    height: 32px;
+}

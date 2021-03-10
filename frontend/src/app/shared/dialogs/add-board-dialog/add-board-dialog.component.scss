@@ -1,0 +1,42 @@
+@import 'assets/scss/_variables';
+
+.todo-add-board-dialog-close-button {
+    float: right;
+    top: -24px;
+    right: -24px;
+}
+
+.todo-add-board-dialog-close-button .todo-add-board-dialog-close-button-icon {
+    transition: 1s ease-in-out;
+}
+
+.todo-add-board-dialog-close-button .todo-add-board-dialog-close-button-icon:hover {
+    transform: rotate(180deg);
+}
+
+.todo-add-board-dialog-title {
+    font-size: 14px;
+}
+
+.todo-add-board-dialog-content {
+    float: left;
+}
+
+.todo-add-board-dialog-actions {
+    display: block;
+}
+
+.todo-add-board-dialog-actions .todo-add-board-dialog-submit-button {
+    background-color: $todo-button-primary-color;
+    color: $todo-primary-text-color;
+}
+
+::ng-deep .icon-outside .todo-add-board-dialog-close-button {
+    float: right;
+    top: -52px;
+    right: -52px;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+    overflow: unset;
+}

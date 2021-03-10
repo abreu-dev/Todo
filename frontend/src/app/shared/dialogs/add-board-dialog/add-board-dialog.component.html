@@ -1,0 +1,21 @@
+<div *ngIf="form">
+    <div [formGroup]="form">
+        <button mat-icon-button class="todo-add-board-dialog-close-button" mat-dialog-close>
+            <mat-icon class="todo-add-board-dialog-close-button-icon" color="warn">close</mat-icon>
+        </button>
+
+        <h1 mat-dialog-title class="todo-add-board-dialog-title">Novo Quadro</h1>
+
+        <div mat-dialog-content class="todo-add-board-dialog-content">
+            <mat-form-field floatLabel="never">
+                <input matInput placeholder="Adicionar título do quadro" formControlName="boardTitle" id="board-title" />
+            </mat-form-field>
+        </div>
+
+        <div mat-dialog-actions class="todo-add-board-dialog-actions">
+            <button class="todo-add-board-dialog-submit-button" mat-button (click)="onSubmit()" cdkFocusInitial id="submit">
+                Criar quadro
+            </button>
+        </div>
+    </div>
+</div>

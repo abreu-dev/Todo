@@ -1,0 +1,25 @@
+<button mat-icon-button [matMenuTriggerFor]="todoAddColumnMenu" class="todo-add-column-tile-button">
+    <mat-icon>add</mat-icon>
+    <span>{{ displayTitle }}</span>
+</button>
+
+<mat-menu #todoAddColumnMenu="matMenu" class="todo-add-column-tile-menu">
+    <div class="todo-add-column-tile-menu-form" (click)="$event.stopPropagation()">
+        <input
+            type="text"
+            [formControl]="columnTitleFormControl"
+            placeholder="Insira o título da lista..."
+            autofocus
+            onselect="this.select()"
+            id="column-title"
+        />
+    </div>
+    <div class="todo-add-column-tile-menu-actions" (click)="$event.stopPropagation()">
+        <button mat-button class="todo-add-column-tile-menu-actions-submit" (click)="onSubmit()" id="submit">
+            <span>Adicionar Lista</span>
+        </button>
+        <button mat-icon-button class="todo-add-column-tile-menu-actions-close" (click)="closeAddColumnTileMenu()">
+            <mat-icon color="warn">close</mat-icon>
+        </button>
+    </div>
+</mat-menu>

@@ -1,0 +1,37 @@
+@import 'assets/scss/_variables';
+
+.about-wrapper {
+    width: 100%;
+}
+
+.about-wrapper .about-header {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.about-wrapper .about-header .about-header-icon {
+    text-align: center;
+}
+
+.about-wrapper .about-header .about-header-icon .mat-icon {
+    font-size: 48px;
+}
+
+.about-wrapper .about-header .about-header-content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about-wrapper .about-header .about-header-content h1 {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.about-wrapper .about-header .about-header-content p {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.about-wrapper .about-content {
+    padding-top: 30px;
+}

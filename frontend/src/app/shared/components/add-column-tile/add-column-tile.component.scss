@@ -1,0 +1,51 @@
+@import 'assets/scss/_variables';
+
+.todo-add-column-tile-button {
+    background-color: $todo-button-primary-color;
+    color: $todo-primary-text-color;
+    border-radius: 3px;
+    border: 0;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.todo-add-column-tile-button:hover {
+    background-color: $todo-button-secondary-color-hover;
+}
+
+::ng-deep .todo-add-column-tile-menu {
+    width: 272px;
+    margin-top: -40px;
+}
+
+::ng-deep .todo-add-column-tile-menu .todo-add-column-tile-menu-form {
+    margin-left: 5px;
+    margin-top: -2px;
+}
+
+::ng-deep .todo-add-column-tile-menu .todo-add-column-tile-menu-form input {
+    border-radius: 3px;
+    width: 95%;
+    font-size: 14px;
+}
+
+::ng-deep .todo-add-column-tile-menu .todo-add-column-tile-menu-actions {
+    margin: 5px;
+    margin-bottom: -5px;
+}
+
+::ng-deep .todo-add-column-tile-menu .todo-add-column-tile-menu-actions .todo-add-column-tile-menu-actions-submit {
+    background-color: $todo-button-primary-color;
+    color: $todo-primary-text-color;
+}
+
+::ng-deep .todo-add-column-tile-menu .todo-add-column-tile-menu-actions .todo-add-column-tile-menu-actions-close .mat-icon {
+    transition: 1s ease-in-out;
+}
+
+::ng-deep .todo-add-column-tile-menu .todo-add-column-tile-menu-actions .todo-add-column-tile-menu-actions-close .mat-icon:hover {
+    transform: rotate(180deg);
+}

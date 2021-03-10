@@ -1,0 +1,38 @@
+.about-backend-wrapper {
+    margin: 10px;
+    border-radius: 20px;
+    border: 0;
+    background-color: #040d21;
+    width: auto;
+    padding-bottom: 100px;
+}
+
+.about-backend-wrapper .about-backend-title {
+    padding-top: 100px;
+    padding-left: 100px;
+}
+
+.about-backend-wrapper .about-backend-title h1 {
+    color: #729ba5;
+    font-weight: 500;
+    font-size: 64px;
+}
+
+.about-backend-wrapper .about-backend-content {
+    padding-top: 20px;
+    padding-left: 100px;
+}
+
+.about-backend-wrapper .about-backend-content .about-backend-content-step {
+    margin: 10px;
+}
+
+.about-backend-wrapper .about-backend-content .about-backend-content-step h3 {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.about-backend-wrapper .about-backend-content .about-backend-content-step img {
+    width: auto;
+}

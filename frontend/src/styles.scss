@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'assets/scss/main.scss';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #f9fbfc;
+}
+
+/* --- Inicio SNACKBAR SERVICE --- */
+.snackbar-success {
+    background-color: #71b471;
+    color: #f9fbfc;
+}
+
+.snackbar-success .mat-simple-snackbar-action {
+    color: #f9fbfc;
+}
+
+.snackbar-error {
+    background-color: #ca5f59;
+    color: #f9fbfc;
+}
+
+.snackbar-error .mat-simple-snackbar-action {
+    color: #f9fbfc;
+}
+/* --- FIM SNACKBAR SERVICE --- */
+
+.todo-container {
+    padding: 30px;
+}
+
+* {
+    font-weight: 400;
+}

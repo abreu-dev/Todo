@@ -1,0 +1,122 @@
+@import 'assets/scss/_variables';
+
+.todo-navbar {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    min-height: 40px;
+    max-height: 40px;
+    overflow: hidden;
+    padding: 0 0;
+    background-color: $todo-primary-color;
+    color: $todo-primary-text-color;
+}
+
+.todo-navbar .todo-navbar-item {
+    padding-left: 5px;
+}
+
+.todo-navbar .todo-navbar-item .todo-navbar-item-button {
+    border-radius: 3px;
+    border: 0;
+    background-color: $todo-button-primary-color;
+    height: 32px;
+    align-items: center;
+    display: flex;
+    width: auto;
+}
+
+.todo-navbar .todo-navbar-item .todo-navbar-item-button .todo-navbar-item-icon {
+    width: 32px;
+}
+
+.todo-navbar .todo-navbar-item .todo-navbar-item-button .todo-navbar-item-text {
+    padding: 0 8px 0 2px;
+}
+
+.todo-navbar .todo-navbar-item .todo-navbar-item-button:hover {
+    background-color: $todo-button-primary-color-hover;
+}
+
+.todo-navbar .todo-navbar-title {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.todo-navbar .todo-navbar-title button {
+    font-size: 18px;
+}
+
+.todo-navbar .todo-navbar-title:hover {
+    opacity: 1;
+}
+
+.todo-navbar .todo-navbar-title .todo-navbar-title-icon {
+    vertical-align: middle;
+}
+
+.todo-navbar .fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.todo-navbar .todo-navbar-right-button .todo-navbar-icon {
+    width: 32px;
+    font-size: 32px;
+}
+
+::ng-deep .todo-navbar-account-menu {
+    width: 500px;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-header {
+    margin-bottom: 8px;
+    padding: 0 12px;
+    position: relative;
+    text-align: center;
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-header .mat-icon {
+    transition: 1s ease-in-out;
+    cursor: pointer;
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-header .mat-icon:hover {
+    transform: rotate(180deg);
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-divider {
+    width: 95%;
+    opacity: 0.5;
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-info {
+    display: flex;
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-info .todo-navbar-account-menu-info-icon {
+    padding: 4px 8px 4px 12px;
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-info .todo-navbar-account-menu-info-icon .mat-icon {
+    font-size: 40px;
+    width: 40px;
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-info .todo-navbar-account-menu-info-username {
+    margin-top: 4px;
+    max-width: 230px;
+}
+
+::ng-deep .todo-navbar-account-menu .todo-navbar-account-menu-info .todo-navbar-account-menu-info-email {
+    font-size: 12px;
+    opacity: 0.5;
+}

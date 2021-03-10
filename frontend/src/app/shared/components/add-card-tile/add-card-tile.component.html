@@ -1,0 +1,25 @@
+<button mat-icon-button [matMenuTriggerFor]="todoAddCardMenu" class="todo-add-card-tile-button">
+    <mat-icon>add</mat-icon>
+    <span>{{ displayTitle }}</span>
+</button>
+
+<mat-menu #todoAddCardMenu="matMenu" class="todo-add-card-tile-menu">
+    <div class="todo-add-card-tile-menu-form" (click)="$event.stopPropagation()">
+        <input
+            type="text"
+            [formControl]="cardTitleFormControl"
+            placeholder="Insira o título do cartão..."
+            autofocus
+            onselect="this.select()"
+            id="card-title"
+        />
+    </div>
+    <div class="todo-add-card-tile-menu-actions" (click)="$event.stopPropagation()">
+        <button mat-button class="todo-add-card-tile-menu-actions-submit" (click)="onSubmit()" id="submit">
+            <span>Adicionar Cartão</span>
+        </button>
+        <button mat-icon-button class="todo-add-card-tile-menu-actions-close" (click)="closeAddCardTileMenu()">
+            <mat-icon color="warn">close</mat-icon>
+        </button>
+    </div>
+</mat-menu>

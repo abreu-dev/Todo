@@ -1,0 +1,38 @@
+.todo-open-column-menu-actions {
+    opacity: 0.5;
+}
+
+.todo-open-column-menu-actions:hover {
+    opacity: 1;
+}
+
+.todo-open-column-menu-actions .mat-icon-button .mat-icon {
+    font-size: 16px;
+}
+
+::ng-deep .todo-column-menu-actions {
+    width: 300px;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+::ng-deep .todo-column-menu-actions .todo-column-menu-actions-header {
+    margin-bottom: 8px;
+    padding: 0 12px;
+    position: relative;
+    text-align: center;
+}
+
+::ng-deep .todo-column-menu-actions .todo-column-menu-actions-header .mat-icon {
+    transition: 1s ease-in-out;
+    cursor: pointer;
+}
+
+::ng-deep .todo-column-menu-actions .todo-column-menu-actions-header .mat-icon:hover {
+    transform: rotate(180deg);
+}
+
+::ng-deep .todo-column-menu-actions .todo-column-menu-actions-divider {
+    width: 95%;
+    opacity: 0.5;
+}

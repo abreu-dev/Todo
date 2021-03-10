@@ -1,0 +1,26 @@
+<div class="todo-open-column-menu-actions">
+    <button disableRipple mat-icon-button [matMenuTriggerFor]="todoColumnMenuActions">
+        <mat-icon [inline]="true">more_horiz</mat-icon>
+    </button>
+</div>
+
+<mat-menu #todoColumnMenuActions="matMenu" class="todo-column-menu-actions">
+    <div (click)="$event.stopPropagation()">
+        <div class="todo-column-menu-actions-header">
+            <div fxFlex="90%">Ações da Lista</div>
+            <mat-icon (click)="closeColumnMenuActions()" color="warn" [inline]="true">close</mat-icon>
+        </div>
+
+        <hr class="todo-column-menu-actions-divider" />
+
+        <button mat-menu-item (click)="moveColumnToLeft()" [disabled]="canMoveToLeft" id="move-left">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+            <span>Mover para esquerda</span>
+        </button>
+
+        <button mat-menu-item (click)="moveColumnToRight()" [disabled]="canMoveToRight" id="move-right">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+            <span>Mover para direita</span>
+        </button>
+    </div>
+</mat-menu>

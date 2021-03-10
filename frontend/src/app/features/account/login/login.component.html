@@ -1,0 +1,41 @@
+<div class="login-form">
+    <div class="login-form-header">
+        <mat-icon [inline]="true">task_alt</mat-icon>
+        <h1>Fazer login no Todo</h1>
+    </div>
+
+    <hr />
+
+    <div class="login-form-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Nome de usuário</mat-label>
+                <input matInput formControlName="username" id="username" />
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" id="password" />
+                <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+                    <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <div class="login-form-forgot-password">
+                <p>
+                    Esqueceu a <a [routerLink]="['/account/forgot-password']"><b>senha?</b></a> ou o
+                    <a [routerLink]="['/account/forgot-username']"><b>nome de usuário?</b></a>
+                </p>
+            </div>
+
+            <hr />
+            <div class="login-form-actions">
+                <button mat-raised-button color="success" type="submit" id="login">Login</button>
+                &nbsp;&nbsp;
+                <button mat-raised-button color="primary" type="button" [routerLink]="['/account/register']" id="to-register">
+                    Criar conta
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

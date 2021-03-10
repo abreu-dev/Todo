@@ -1,0 +1,71 @@
+{
+    "root": true,
+    "ignorePatterns": ["projects/**/*"],
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "parserOptions": {
+                "project": ["tsconfig.json", "e2e/tsconfig.json"],
+                "createDefaultProgram": true
+            },
+            "plugins": ["ordered-imports", "unused-imports"],
+            "extends": [
+                "plugin:@angular-eslint/recommended",
+                "plugin:@angular-eslint/ng-cli-compat",
+                "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+                "plugin:@angular-eslint/template/process-inline-templates",
+                "plugin:ordered-imports/recommended"
+            ],
+            "rules": {
+                "@angular-eslint/component-selector": [
+                    "error",
+                    {
+                        "type": "element",
+                        "prefix": "app",
+                        "style": "kebab-case"
+                    }
+                ],
+                "@angular-eslint/directive-selector": [
+                    "error",
+                    {
+                        "type": "attribute",
+                        "prefix": "app",
+                        "style": "camelCase"
+                    }
+                ],
+                "ordered-imports/ordered-imports": [
+                    "error",
+                    {
+                        "declaration-ordering": [
+                            "type",
+                            {
+                                "ordering": ["side-effect", "default", "namespace", "destructured"],
+                                "secondaryOrdering": ["source", "lowercase-last"]
+                            }
+                        ],
+                        "specifier-ordering": "lowercase-last",
+                        "group-ordering": [
+                            { "name": "angular", "match": "^@angular/", "order": 1 },
+                            { "name": "ngneat", "match": "^@ngneat/", "order": 2 },
+                            { "name": "core", "match": "^@core/", "order": 3 },
+                            { "name": "environments", "match": "^@environments/", "order": 4 },
+                            { "name": "feature", "match": "^@features/", "order": 5 },
+                            { "name": "shared", "match": "^@shared/", "order": 6 },
+                            { "name": "current-directory", "match": "^\\.", "order": 7 },
+                            { "name": "parent-directories", "match": "^\\.\\.", "order": 8 },
+                            { "name": "third-party", "match": ".*", "order": 9 }
+                        ]
+                    }
+                ],
+                "unused-imports/no-unused-imports": "error"
+            }
+        },
+        {
+            "files": ["*.html"],
+            "extends": ["plugin:@angular-eslint/template/recommended"],
+            "rules": {
+                "eol-last": "error"
+            }
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+<div class="todo-board-wrapper" *ngIf="board">
+    <div class="todo-board-title-wrapper">
+        <app-editable appEditableOnEnter (update)="updateBoardTitle()">
+            <ng-template appViewMode>
+                <button mat-button class="todo-board-title-view-mode">
+                    <span id="board-title">{{ board.title }}</span>
+                </button>
+            </ng-template>
+            <ng-template appEditMode>
+                <button mat-button class="todo-board-title-edit-mode">
+                    <span
+                        ><input
+                            type="text"
+                            [formControl]="boardTitleFormControl"
+                            autofocus
+                            onselect="this.select()"
+                            id="update-board-title"
+                    /></span>
+                </button>
+            </ng-template>
+        </app-editable>
+    </div>
+
+    <app-board-canvas
+        [board]="board"
+        (addColumnToBoard)="addColumnToBoard($event)"
+        (addCardToColumn)="addCardToColumn($event)"
+        (updateCardPriorityInColumn)="updateCardPriorityInColumn($event)"
+        (moveCardBetweenColumns)="moveCardBetweenColumns($event)"
+        (updateColumnTitle)="updateColumnTitle($event)"
+        (updateColumnPositionInBoard)="updateColumnPositionInBoard($event)"
+    ></app-board-canvas>
+</div>

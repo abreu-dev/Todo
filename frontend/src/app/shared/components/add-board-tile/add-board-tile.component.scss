@@ -1,0 +1,17 @@
+@import 'assets/scss/_variables';
+
+.todo-add-board-tile {
+    background-color: $todo-button-primary-color;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.todo-add-board-tile:hover {
+    background-color: $todo-button-primary-color-hover;
+}
+
+.todo-add-board-tile .todo-add-board-tile-title {
+    color: $todo-primary-text-color;
+    font-size: 14px;
+    text-align: center;
+}

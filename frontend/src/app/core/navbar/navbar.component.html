@@ -1,0 +1,62 @@
+<mat-toolbar class="todo-navbar" *ngIf="isLoggedIn()">
+    <div class="todo-navbar-item">
+        <button [routerLink]="['/home']" class="todo-navbar-item-button" mat-icon-button>
+            <mat-icon class="todo-navbar-item-icon">home</mat-icon>
+        </button>
+    </div>
+    <div class="todo-navbar-item">
+        <button [routerLink]="['/home']" class="todo-navbar-item-button" mat-icon-button>
+            <mat-icon class="todo-navbar-item-icon">dashboard</mat-icon>
+            <span class="todo-navbar-item-text">Quadros</span>
+        </button>
+    </div>
+    <div class="todo-navbar-item">
+        <button [routerLink]="['/about']" class="todo-navbar-item-button" mat-icon-button>
+            <mat-icon class="todo-navbar-item-icon">info</mat-icon>
+            <span class="todo-navbar-item-text">Sobre</span>
+        </button>
+    </div>
+
+    <div class="todo-navbar-title">
+        <button disableRipple mat-icon-button [routerLink]="['/home']">
+            <mat-icon class="todo-navbar-title-icon" [inline]="true">task_alt</mat-icon>Todo
+        </button>
+    </div>
+
+    <div class="fill-remaining-space"></div>
+
+    <div class="todo-navbar-right-button" id="open-account-menu">
+        <button disableRipple mat-icon-button [matMenuTriggerFor]="todoAccountMenu">
+            <mat-icon class="todo-navbar-icon">account_circle</mat-icon>
+        </button>
+    </div>
+
+    <mat-menu #todoAccountMenu="matMenu" class="todo-navbar-account-menu">
+        <div (click)="$event.stopPropagation()">
+            <div class="todo-navbar-account-menu-header">
+                <div fxFlex="90%">Conta</div>
+                <mat-icon (click)="closeAccountMenu()" color="warn" [inline]="true">close</mat-icon>
+            </div>
+
+            <hr class="todo-navbar-account-menu-divider" />
+
+            <div class="todo-navbar-account-menu-info">
+                <div class="todo-navbar-account-menu-info-icon">
+                    <mat-icon mat-card-avatar>account_circle</mat-icon>
+                </div>
+                <div>
+                    <div class="todo-navbar-account-menu-info-username" id="account-menu-username">
+                        {{ username }}
+                    </div>
+                    <span class="todo-navbar-account-menu-info-email" id="account-menu-email">{{ email }}</span>
+                </div>
+            </div>
+
+            <hr class="todo-navbar-account-menu-divider" />
+
+            <button mat-menu-item (click)="onLogout()" id="logout">
+                <span>Logout</span>
+            </button>
+        </div>
+    </mat-menu>
+</mat-toolbar>
